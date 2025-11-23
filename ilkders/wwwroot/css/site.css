@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.merhaba {
+    color: #0082c9;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}
+
+.desc {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #888;
+}

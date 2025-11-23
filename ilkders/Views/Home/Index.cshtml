@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burhan Şahin | Web Geliştirici & Teknoloji Tutkunu</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="/img/burhan.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#home">
+                        <span class="logo-text">BURHAN</span>
+                        <span class="logo-accent">ŞAHİN</span>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
+                        <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                        <li><a href="#projects" class="nav-link">Projeler</a></li>
+                        <li><a href="#contact" class="nav-link">İletişim</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                    <div class="nav-toggle" id="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - GÜNCELLENMIŞ BÖLÜM -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-text">Merhaba, Ben</span>
+                        <div class="greeting-wave">👋</div>
+                    </div>
+
+                    <!-- GÜNCELLENMIŞ: İsim ve Profil Fotoğrafı Birlikte -->
+                    <div class="hero-title-container">
+                        <!-- Profesyonel Profil Fotoğrafı -->
+                        <div class="profile-photo-simple">
+                            <img src="/img/burhan.jpeg" alt="Burhan Şahin" />
+                        </div>
+
+                        <h1 class="hero-title">
+                            <span class="title-name">Burhan Şahin</span>
+                            <span class="title-role">Web Geliştirici & Teknoloji Tutkunu</span>
+                        </h1>
+                    </div>
+
+                    <p class="hero-description">
+                        Ağ Teknolojileri ve Web Tasarımı üzerine çalışıyorum. Modern web teknolojileri ile kullanıcı dostu ve performanslı web siteleri geliştiriyorum.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">
+                            <span>Daha Fazla Keşfet</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kod Penceresi Sağ Tarafta Kalıyor -->
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="window-title">burhan-sahin.cs</div>
+                        </div>
+                        <div class="window-content">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-text">
+                                    <span class="keyword">public class</span>
+                                    <span class="class-name">Developer</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-text">
+                                    {
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-text">
+                                    &nbsp;&nbsp;<span class="keyword">public string</span> Name = <span class="string">"Burhan Şahin"</span>;
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-text">
+                                    &nbsp;&nbsp;<span class="keyword">public string[]</span> Skills = {<span class="string">"C#"</span>, <span class="string">"MSSQL"</span>, <span class="string">"Python"</span>,<span class="string">"Discord.js"</span>};
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-text">
+                                    &nbsp;&nbsp;<span class="keyword">public string</span> Passion = <span class="string">"Web Development"</span>;
+                                </span>
+                            </div>
+
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-text">
+                                    }
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-text">Aşağı Kaydır</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Hakkımda</span>
+                <h2 class="section-title">Eğitim Sürecim ve Deneyimlerim</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card main-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>İnternet ve Ağ Teknolojileri Programında Neler Öğrendim?</h3>
+                        <p>
+                            Sinop Üniversitesi Ayancık Meslek Yüksekokulu'nda İnternet ve Ağ Teknolojileri Programı'nda eğitim alarak birçok önemli konu öğrendim. Bu yazıda, bu programda kazandığım temel becerileri paylaşacağım.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Ağ Temelleri ve Yapılar</h4>
+                        <p>
+                            İlk adım olarak, ağların temellerini öğrendim. Ağların nasıl çalıştığını, ağ donanımlarını (modem, router, switch, vb.) ve ağ topolojilerini öğrenme, ağ mühendisliğine adım atmak için çok önemli bir başlangıç.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>IP Adresleme</h4>
+                        <p>
+                            İnternet protokolü (IP) adreslerinin nasıl çalıştığını öğrendim. IPv4 ve IPv6 adresleme yöntemlerini öğrendim, ağlarda doğru IP adresi yapılandırmalarının önemini anladım.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Ağ Protokolleri</h4>
+                        <p>
+                            TCP/IP, UDP gibi ağ protokollerinin nasıl çalıştığını ve hangi durumlarda kullanıldığını öğrendim. Bu protokoller ağların temel yapı taşlarıdır ve ağ yönetiminde kritik rol oynar.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h4>C# Programlama</h4>
+                        <p>
+                            C# programlama dili ile nesne yönelimli programlama kavramlarını öğrendim. .NET framework kullanarak masaüstü ve web uygulamaları geliştirme becerisi kazandım.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>MSSQL Veritabanı</h4>
+                        <p>
+                            Microsoft SQL Server ile veritabanı tasarımı, SQL sorguları yazma ve veritabanı yönetimi konularında deneyim kazandım. İlişkisel veritabanı kavramlarını öğrendim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programming Section -->
+    <section class="programming section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Programlama</span>
+                <h2 class="section-title">Programlama Dünyasına Giriş: Python, C#, HTML, CSS ve MSSQL</h2>
+            </div>
+
+            <div class="programming-content">
+                <div class="programming-intro">
+                    <p>
+                        Programlama, teknolojiyle şekillenen bir dünyada, bilgi üretmek ve yaratıcı çözümler geliştirmek için temel bir araçtır. Python, C#, HTML, CSS ve MSSQL gibi teknolojiler, modern yazılım geliştirme sürecinin temel taşlarıdır.
+                    </p>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>
+                            Python, genel amaçlı bir programlama dili olarak verimli ve esnek çözümler sunar. Basit sözdizimi, veri analitiğinden yapay zekaya kadar geniş bir alanda kullanılmasını sağlar.
+                        </p>
+                        <div class="tech-features">
+                            <span class="feature-tag">Kolay Öğrenme</span>
+                            <span class="feature-tag">Çok Amaçlı</span>
+                            <span class="feature-tag">Büyük Topluluk</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon csharp">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h3>C#</h3>
+                        <p>
+                            C#, Microsoft tarafından geliştirilen güçlü ve modern bir programlama dilidir. .NET framework ile birlikte web uygulamaları, masaüstü uygulamaları ve oyun geliştirme için kullanılır.
+                        </p>
+                        <div class="tech-features">
+                            <span class="feature-tag">Güçlü Tipli</span>
+                            <span class="feature-tag">Nesne Yönelimli</span>
+                            <span class="feature-tag">Microsoft Ekosistemi</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon html">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>HTML</h3>
+                        <p>
+                            HTML (HyperText Markup Language), web sayfalarının yapısını oluşturan temel işaretleme dilidir. CSS ile birlikte çalışarak, web sayfalarına hem içerik hem de görsel çekicilik kazandırır.
+                        </p>
+                        <div class="tech-features">
+                            <span class="feature-tag">Web Temeli</span>
+                            <span class="feature-tag">Yapısal</span>
+                            <span class="feature-tag">Standart</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon css">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS</h3>
+                        <p>
+                            CSS (Cascading Style Sheets), web sayfalarının görsel tasarımını ve düzenini kontrol eden stil dilidir. Responsive tasarım ve modern animasyonlar için vazgeçilmez bir araçtır.
+                        </p>
+                        <div class="tech-features">
+                            <span class="feature-tag">Stil Verme</span>
+                            <span class="feature-tag">Responsive</span>
+                            <span class="feature-tag">Animasyon</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon mssql">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>MSSQL</h3>
+                        <p>
+                            Microsoft SQL Server, kurumsal düzeyde güvenilir ve ölçeklenebilir bir veritabanı yönetim sistemidir. Büyük veri setlerini yönetmek ve karmaşık sorgular yapmak için ideal bir çözümdür.
+                        </p>
+                        <div class="tech-features">
+                            <span class="feature-tag">Kurumsal</span>
+                            <span class="feature-tag">Güvenli</span>
+                            <span class="feature-tag">Ölçeklenebilir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Projeler</span>
+                <h2 class="section-title">Son Çalışmalarım</h2>
+            </div>
+
+            <!-- Tüm projeler tek bir grid içinde -->
+            <div class="projects-grid">
+                <!-- Proje 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://opengraph.githubassets.com/1/brhnshn/Kutuphane-Takip-Programi" alt="Kütüphane Takip Programı" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/brhnshn/Kutuphane-Takip-Programi" target="_blank" class="project-link" loading="lazy">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/brhnshn/Kutuphane-Takip-Programi" target="_blank" class="project-link" loading="lazy">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kütüphane Takip Programı</h3>
+                        <p>Bu proje, bir kütüphanedeki kitapların takibini sağlamak amacıyla geliştirilmiştir. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C#</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proje 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://opengraph.githubassets.com/1/brhnshn/burhansahin.com.tr" alt="Kişisel Web Sitesi">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/brhnshn/burhansahin.com.tr" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/brhnshn/burhansahin.com.tr" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kişisel Web Sitesi</h3>
+                        <p>Modern tasarım ve responsive yapı ile geliştirilmiş kişisel portfolyo sitesi.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-tr="İletişim" data-en="Contact">İletişim</span>
+                <h2 class="section-title" data-tr="Benimle İletişime Geçin" data-en="Get In Touch With Me">Benimle İletişime Geçin</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 data-tr="E-posta" data-en="Email">E-posta</h3>
+                        <p>contact@burhansahin.com.tr</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 data-tr="Konum" data-en="Location">Konum</h3>
+                        <p data-tr="Sinop, Türkiye" data-en="Sinop, Turkey">Çanakkale, Türkiye</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/movlrpaw" method="POST" novalidate>
+
+                        <input type="text" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Adınız</label>
+                                <input type="text" id="name" name="name" placeholder="Adınız" data-tr-placeholder="Adınız" data-en-placeholder="Your Name" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">E-posta</label>
+                                <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" data-tr-placeholder="E-posta Adresiniz" data-en-placeholder="Your Email" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="sr-only">Konu</label>
+                            <input type="text" id="subject" name="subject" placeholder="Konu" data-tr-placeholder="Konu" data-en-placeholder="Subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Mesaj</label>
+                            <textarea id="message" name="message" placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" rows="6" required style="resize: none;"></textarea>
+                        </div>
+
+                        <div class="form-actions" style="display:flex; align-items:center; gap:1rem;">
+                            <button type="submit" class="btn btn-primary btn-full" id="contact-submit">
+                                <span data-tr="Mesaj Gönder" data-en="Send Message">Mesaj Gönder</span>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                            <div id="contact-status" aria-live="polite" style="font-size:0.95rem; color:inherit;"></div>
+                        </div>
+
+                        <p class="form-note" style="margin-top:0.75rem; font-size:0.9rem; color:rgba(0,0,0,0.6);">
+
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">BURHAN</span>
+                        <span class="logo-accent">ŞAHİN</span>
+                    </div>
+                    <p data-tr="Web geliştirici ve teknoloji tutkunu. Modern web teknolojileri ile kullanıcı dostu çözümler geliştiriyorum." data-en="Web developer and technology enthusiast. I develop user-friendly solutions with modern web technologies.">
+                        Web geliştirici ve teknoloji tutkunu. Modern web teknolojileri ile kullanıcı dostu çözümler geliştiriyorum.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-tr="Hızlı Linkler" data-en="Quick Links">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#home" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                        <li><a href="#about" data-tr="Hakkımda" data-en="About">Hakkımda</a></li>
+                        <li><a href="#projects" data-tr="Projeler" data-en="Projects">Projeler</a></li>
+                        <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4 data-tr="Sosyal Medya" data-en="Social Media">Sosyal Medya</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/brhnshn" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/burhan-sahin/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/burhan_sahn/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-tr="© 2024 Burhan Şahin. Tüm hakları saklıdır." data-en="© Burhan Şahin">© Burhan Şahin</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
