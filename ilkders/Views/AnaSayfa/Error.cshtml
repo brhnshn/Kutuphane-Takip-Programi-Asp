@@ -1,0 +1,58 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hata</title>
+
+    <style>
+        body {
+            background-color: #0b1e3b; /* Koyu Mavi Arka Plan */
+            color: #ffffff; /* Yazılar Beyaz */
+            font-family: sans-serif; /* Okunabilir font */
+            display: flex; /* İçeriği ortalamak için */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Sayfa yüksekliğinin tamamı */
+            margin: 0;
+        }
+
+        .text-danger {
+            color: #ff6b6b; /* Hata başlıkları için açık kırmızı (Koyu zeminde görünsün diye) */
+        }
+
+        code {
+            background-color: #162a4f;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ffd700; /* Kod kısmı sarı olsun */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-danger">Hata.</h1>
+    <h2 class="text-danger" style="margin-bottom: 20px;">İsteğiniz işlenirken bir hata oluştu.</h2>
+
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+
+    <p style="max-width: 600px; text-align: center; line-height: 1.6;">
+        Beklenmedik bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.
+        <br />
+        <br />
+        <a href="/" style="color: #4da6ff; text-decoration: none; border: 1px solid #4da6ff; padding: 10px 20px; border-radius: 5px;">Ana Sayfaya Dön</a>
+    </p>
+
+</body>
+</html>

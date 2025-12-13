@@ -1,0 +1,207 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Site.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    var ad = user?.Ad ?? User.Identity.Name;
+
+    <div class="container py-5 mt-4">
+
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-2">Hoş Geldin, <span class="text-primary">@ad</span>!</h1>
+                <p class="lead text-muted">Bugün kütüphanende ne yapmak istersin?</p>
+            </div>
+            <div class="col-lg-4 text-lg-end d-none d-lg-block">
+                <span class="text-muted small">@DateTime.Now.ToString("dd MMMM yyyy, dddd")</span>
+            </div>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden card-hover-effect">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center p-3 rounded-4 mb-3 text-white shadow-sm"
+                                 style="background: var(--secondary-gradient); width: 60px; height: 60px;">
+                                <i class="fas fa-book-reader fs-3"></i>
+                            </div>
+                            <h3 class="fw-bold">Kütüphanem</h3>
+                            <p class="text-muted">Tüm kitaplarını listele, ara ve düzenle.</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a asp-controller="Kitap" asp-action="Index" class="btn btn-light w-100 fw-bold py-2 rounded-3 stretched-link border">
+                                Listeye Git <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden card-hover-effect">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center p-3 rounded-4 mb-3 text-white shadow-sm"
+                                 style="background: linear-gradient(135deg, #11998e, #38ef7d); width: 60px; height: 60px;">
+                                <i class="fas fa-plus fs-3"></i>
+                            </div>
+                            <h3 class="fw-bold">Kitap Ekle</h3>
+                            <p class="text-muted">Kütüphanene yeni bir eser kazandır.</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a asp-controller="Kitap" asp-action="Create" class="btn btn-light w-100 fw-bold py-2 rounded-3 stretched-link border">
+                                Hemen Ekle <i class="fas fa-plus ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden card-hover-effect">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center p-3 rounded-4 mb-3 text-white shadow-sm"
+                                 style="background: var(--primary-gradient); width: 60px; height: 60px;">
+                                <i class="fas fa-user-cog fs-3"></i>
+                            </div>
+                            <h3 class="fw-bold">Profilim</h3>
+                            <p class="text-muted">Bilgilerini güncelle ve istatistiklerine bak.</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a asp-controller="Account" asp-action="Profile" class="btn btn-light w-100 fw-bold py-2 rounded-3 stretched-link border">
+                                Ayarları Aç <i class="fas fa-cog ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-5 p-4 rounded-4 bg-primary bg-opacity-10 border border-primary border-opacity-10">
+            <div class="d-flex gap-3">
+                <i class="fas fa-lightbulb text-primary fs-3 mt-1"></i>
+                <div>
+                    <h5 class="fw-bold text-primary mb-1">Biliyor muydun?</h5>
+                    <p class="mb-0 text-muted">
+                        @ViewBag.Ipucu
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card-hover-effect:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 1rem 3rem rgba(0,0,0,0.15) !important;
+            }
+    </style>
+}
+
+else
+{
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary rounded-5 shadow-lg"
+         style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+
+        <div class="col-md-8 p-lg-5 mx-auto my-5 position-relative text-white">
+            <h1 class="display-3 fw-bold mb-3">Kütüphaneni Cebine Sığdır</h1>
+            <p class="lead fw-normal mb-4 opacity-75">
+                Okuduğun, okuyacağın ve ödünç verdiğin tüm kitaplar tek bir yerde. Excel dosyalarıyla uğraşmayı bırak, modern sisteme geç.
+            </p>
+            <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                <a class="btn btn-light btn-lg rounded-pill px-4 fw-bold text-primary" asp-controller="Account" asp-action="Register">
+                    Ücretsiz Başla <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <a class="btn btn-outline-light btn-lg rounded-pill px-4" asp-controller="Account" asp-action="Login">
+                    Giriş Yap
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 my-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="feature-icon-box">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <h2 class="display-6 fw-bold lh-1 mb-3">Hızlı Kitap Ekleme</h2>
+                <p class="lead text-muted">
+                    Kitaplığın büyüdükçe yönetmesi zorlaşmasın. Özel form tasarımımız sayesinde;
+                </p>
+                <ul class="list-unstyled mt-4 fs-5">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle text-success me-3"></i> ISBN ve Yayınevi desteği
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle text-success me-3"></i> Hazır tür listesi (Roman, Bilim Kurgu...)
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle text-success me-3"></i> Hatalı giriş engelleyici validasyonlar
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="screenshot-container">
+                    <img src="/img/KitapKayıt.png" class="d-block w-100" alt="Kitap Ekleme">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider my-5 opacity-10">
+
+    <div class="container py-5 my-5">
+        <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6">
+                <div class="feature-icon-box" style="background: var(--secondary-gradient);">
+                    <i class="fas fa-list"></i>
+                </div>
+                <h2 class="display-6 fw-bold lh-1 mb-3">Kütüphanene Hakim Ol</h2>
+                <p class="lead text-muted">
+                    Binlerce kitabın olsa bile aradığını bulmak saniyeler sürer. Gelişmiş tablo yapısı ile:
+                </p>
+                <div class="d-grid gap-3 mt-4">
+                    <div class="d-flex p-3 bg-body-tertiary rounded-3 align-items-center">
+                        <i class="fas fa-search text-primary fs-3 me-3"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Anlık Arama</h6>
+                            <small class="text-muted">Kitap adı veya yazara göre filtreleme.</small>
+                        </div>
+                    </div>
+                    <div class="d-flex p-3 bg-body-tertiary rounded-3 align-items-center">
+                        <i class="fas fa-eye text-primary fs-3 me-3"></i>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Detaylı Görünüm</h6>
+                            <small class="text-muted">Sayfa sayısı, basım yılı ve tür bilgileri bir arada.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="screenshot-container">
+                    <img src="/img/KitapListe.png" class="d-block w-100" alt="Liste Görünümü">
+                </div>
+            </div>
+        </div>
+    </div>
+}

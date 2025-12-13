@@ -1,0 +1,134 @@
+﻿@model Site.Models.Kitap
+
+@{
+    ViewData["Title"] = "Kitap Ekle";
+}
+
+<div class="container py-5 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+
+                <div class="card-header border-0 py-3 px-4 text-white" style="background: var(--primary-gradient);">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-white bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                            <i class="fas fa-plus fa-lg text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Yeni Kitap Ekle</h5>
+                            <small class="opacity-75">Kütüphanenize yeni bir eser kazandırın.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-4 bg-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="KitapAdı" class="form-label fw-bold small text-muted">KİTAP ADI</label>
+                                <input asp-for="KitapAdı" class="form-control bg-body-tertiary" placeholder="Örn: Sefiller" maxlength="50" />
+                                <span asp-validation-for="KitapAdı" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="YazarAdı" class="form-label fw-bold small text-muted">YAZAR</label>
+                                <input asp-for="YazarAdı" class="form-control bg-body-tertiary" placeholder="Örn: Victor Hugo" maxlength="50" />
+                                <span asp-validation-for="YazarAdı" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3">
+                                <label asp-for="YayınEvi" class="form-label fw-bold small text-muted">YAYIN EVİ</label>
+                                <input asp-for="YayınEvi" class="form-control bg-body-tertiary" maxlength="50" />
+                                <span asp-validation-for="YayınEvi" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label asp-for="Tür" class="form-label fw-bold small text-muted">TÜR</label>
+                                <select asp-for="Tür" class="form-select bg-body-tertiary">
+                                    <option value="">Seçiniz...</option>
+                                    @if (ViewBag.Turler != null)
+                                    {
+                                        foreach (var tur in ViewBag.Turler)
+                                        {
+                                            <option value="@tur">@tur</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="Tür" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label asp-for="Durum" class="form-label fw-bold small text-muted">DURUM</label>
+                                <select asp-for="Durum" class="form-select bg-body-tertiary">
+                                    @if (ViewBag.Durumlar != null)
+                                    {
+                                        foreach (var durum in ViewBag.Durumlar)
+                                        {
+                                            <option value="@durum">@durum</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="Durum" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label asp-for="Puan" class="form-label fw-bold small text-muted">PUAN</label>
+                                <select asp-for="Puan" class="form-select bg-body-tertiary">
+                                    <option value="0">Puan Ver...</option>
+                                    <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4)</option>
+                                    <option value="3">⭐⭐⭐ (3)</option>
+                                    <option value="2">⭐⭐ (2)</option>
+                                    <option value="1">⭐ (1)</option>
+                                </select>
+                                <span asp-validation-for="Puan" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label asp-for="SayfaSayısı" class="form-label fw-bold small text-muted">SAYFA</label>
+                                <input asp-for="SayfaSayısı" class="form-control bg-body-tertiary" type="number" min="1" max="5000" />
+                                <span asp-validation-for="SayfaSayısı" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Yıl" class="form-label fw-bold small text-muted">YIL</label>
+                                <input asp-for="Yıl" class="form-control bg-body-tertiary" type="number" min="1000" max="@(DateTime.Now.Year + 1)" value="@DateTime.Now.Year" />
+                                <span asp-validation-for="Yıl" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="ISBN" class="form-label fw-bold small text-muted">ISBN</label>
+                                <input asp-for="ISBN" class="form-control bg-body-tertiary" maxlength="20" />
+                                <span asp-validation-for="ISBN" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <hr class="opacity-10 my-4">
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="Index" class="btn btn-soft px-4 rounded-pill fw-bold shadow-sm">
+                                <i class="fas fa-times me-2"></i> İptal
+                            </a>
+
+                            <button type="submit" class="btn btn-primary px-4 rounded-pill fw-bold shadow-sm"
+                                    style="background: var(--primary-gradient); border: none;">
+                                <i class="fas fa-save me-2"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
