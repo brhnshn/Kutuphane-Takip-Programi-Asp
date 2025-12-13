@@ -1,41 +1,152 @@
-html {
-  font-size: 14px;
+﻿/* --- TEMEL DEĞİŞKENLER (LIGHT MODE) --- */
+:root {
+    /* Logo ve İkonlar için Gradyan */
+    --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    /* CAM EFEKTİ (LIGHT MODE - DÜZELTİLDİ) */
+    /* Beyaz ama %85 opaklıkta -> Arkası bulanık görünür */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    /* Metin Renkleri */
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --footer-title: #212529; /* Light modda başlıklar koyu olsun */
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+/* --- DARK MODE AYARLARI --- */
+[data-bs-theme="dark"] {
+    /* CAM EFEKTİ (DARK MODE) */
+    /* Koyu Lacivert/Siyah %85 opaklıkta */
+    --glass-bg: rgba(25, 25, 35, 0.85);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    /* Metin Renkleri */
+    --text-main: #e9ecef;
+    --text-muted: #adb5bd;
+    --footer-title: #ffffff; /* Dark modda başlıklar beyaz olsun */
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* --- ORTAK CAM TASARIMI (NAVBAR & FOOTER) --- */
+.glass-panel {
+    background: var(--glass-bg); /* Değişkenden rengi al */
+    backdrop-filter: blur(12px); /* ARKA PLANI BULANIKLAŞTIR */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--glass-shadow);
+    transition: background 0.3s ease, border-color 0.3s ease;
+    z-index: 1000;
 }
 
-body {
-  margin-bottom: 60px;
-}
-.merhaba {
-    color: #0082c9;
-    text-align: center;
-    margin-top: 60px;
-    font-size: 48px;
-    font-family: Arial, sans-serif;
+/* Navbar Özel */
+.navbar-glass {
+    border-bottom: var(--glass-border);
 }
 
-.desc {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
+/* Footer Özel */
+.footer-glass {
+    border-top: var(--glass-border);
+    margin-top: auto; /* Sayfanın dibine it */
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-main);
 }
 
-footer {
-    text-align: center;
-    margin-top: 60px;
-    color: #888;
+/* --- LOGO VE YAZILAR --- */
+.navbar-brand span {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
+
+/* --- FOOTER STİLLERİ --- */
+.footer-glass h5 {
+    color: var(--footer-title);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.footer-glass a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+    .footer-glass a:hover {
+        color: #0d6efd; /* Bootstrap Mavisi */
+        padding-left: 5px; /* Hafif sağa kayma efekti */
+    }
+
+/* --- ANA SAYFA ELEMENTLERİ --- */
+.feature-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    background: var(--primary-gradient);
+}
+
+.screenshot-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border: var(--glass-border);
+}
+/* --- DARK MODE INPUT DÜZELTMESİ --- */
+[data-bs-theme="dark"] .form-control {
+    background-color: #2b2b40; /* Koyu arka plan */
+    border-color: rgba(255, 255, 255, 0.1); /* Hafif çerçeve */
+    color: #e9ecef; /* Açık renk yazı */
+}
+
+    /* Okunamaz (Disabled) alanlar için ayar */
+    [data-bs-theme="dark"] .form-control:disabled,
+    [data-bs-theme="dark"] .form-control[readonly] {
+        background-color: #1e1e2d;
+        opacity: 0.6;
+    }
+
+/* Input grubu ikonları (Sol taraftaki ikonlar) */
+[data-bs-theme="dark"] .input-group-text {
+    background-color: #2b2b40;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #adb5bd;
+}
+/* --- SOFT BUTON (İptal / Geri Dön için) --- */
+.btn-soft {
+    background-color: #ffffff; /* Light modda beyaz */
+    color: #495057; /* Koyu gri yazı */
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+    .btn-soft:hover {
+        transform: translateY(-2px); /* Hafif yukarı kalkma */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        color: #0d6efd; /* Üstüne gelince mavi yazı */
+    }
+
+/* DARK MODE AYARI */
+[data-bs-theme="dark"] .btn-soft {
+    background-color: #2b2b40; /* Arka planla uyumlu koyu ton */
+    color: #e9ecef; /* Açık renk yazı */
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+    [data-bs-theme="dark"] .btn-soft:hover {
+        background-color: #36364e; /* Üstüne gelince biraz açıl */
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }

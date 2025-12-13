@@ -1,4 +1,4 @@
-namespace ilkders.Models
+namespace Site.Models
 {
     public class ErrorViewModel
     {
@@ -7,3 +7,4 @@ namespace ilkders.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+

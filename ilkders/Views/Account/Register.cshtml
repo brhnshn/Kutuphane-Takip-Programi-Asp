@@ -1,0 +1,80 @@
+﻿@model Site.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+            <div class="card rounded-4 text-black overflow-hidden shadow-lg border-0">
+                <div class="row g-0">
+
+                    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center text-white position-relative"
+                         style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;">
+
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-50 mix-blend-multiply"></div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+
+                        <div class="position-relative z-1 text-center px-4">
+                            <h2 class="display-6 fw-bold mb-3">Aramıza Katıl</h2>
+                            <p class="lead">Kendi dijital kütüphaneni oluştur, okuma alışkanlığını bir üst seviyeye taşı.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 bg-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-user-plus fa-2x text-primary me-2"></i>
+                            <span class="h2 fw-bold mb-0 text-primary">Hesap Oluştur</span>
+                        </div>
+
+                        <form asp-action="Register" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small"></div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6 form-floating">
+                                    <input asp-for="Ad" class="form-control bg-body-tertiary border-0" id="floatingAd" placeholder="Ad">
+                                    <label for="floatingAd" class="text-muted ps-4">Ad</label>
+                                    <span asp-validation-for="Ad" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6 form-floating">
+                                    <input asp-for="Soyad" class="form-control bg-body-tertiary border-0" id="floatingSoyad" placeholder="Soyad">
+                                    <label for="floatingSoyad" class="text-muted ps-4">Soyad</label>
+                                    <span asp-validation-for="Soyad" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Email" class="form-control bg-body-tertiary border-0" id="floatingEmail" placeholder="name@example.com">
+                                <label for="floatingEmail" class="text-muted">E-posta Adresi</label>
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input asp-for="Password" class="form-control bg-body-tertiary border-0" id="floatingPass" placeholder="Şifre">
+                                <label for="floatingPass" class="text-muted">Şifre</label>
+                                <span asp-validation-for="Password" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input asp-for="ConfirmPassword" class="form-control bg-body-tertiary border-0" id="floatingConfirm" placeholder="Şifre Tekrar">
+                                <label for="floatingConfirm" class="text-muted">Şifre Tekrar</label>
+                                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                            </div>
+
+                            <div class="d-grid mb-4">
+                                <button class="btn btn-primary btn-lg rounded-pill fw-bold" type="submit"
+                                        style="background: var(--primary-gradient); border: none;">
+                                    Kayıt Ol
+                                </button>
+                            </div>
+
+                            <p class="small text-muted mb-0 text-center">Zaten hesabın var mı? <a asp-action="Login" class="text-primary fw-bold text-decoration-none">Giriş Yap</a></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

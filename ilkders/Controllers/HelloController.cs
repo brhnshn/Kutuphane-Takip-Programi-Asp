@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ilkders.Controllers
+namespace Site.Controllers
 {
     public class HelloController : Controller
     {
         public IActionResult Index()
         {
             return View();
-        }
+     }
     }
 }
