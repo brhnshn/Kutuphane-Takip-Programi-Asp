@@ -1,4 +1,4 @@
-git push origin --delete main# 📚 Kütüphane Takip Yönetim Sistemi
+# 📚 Kütüphane Takip Yönetim Sistemi
 
 > ASP.NET Core MVC ile geliştirilmiş, güvenli üyelik yapısına sahip, canlı ortamda yayınlanan web tabanlı kütüphane yönetim uygulaması.
 
