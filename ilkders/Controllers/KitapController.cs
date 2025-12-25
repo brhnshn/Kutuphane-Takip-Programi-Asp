@@ -22,12 +22,12 @@ namespace Site.Controllers
 
         private string GetCurrentUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        // LİSTELEME (GÜNCELLENDİ: FİLTRELEME EKLENDİ)
+        // LİSTELEME
         public async Task<IActionResult> Index(string aramaMetni, string durumFiltresi, int? pageNumber)
         {
             var userId = GetCurrentUserId();
 
-            // Arama ve Filtre bilgilerini View'a taşı (Sayfalama ve buton boyama için)
+        
             ViewData["CurrentFilter"] = aramaMetni;
             ViewBag.AktifFiltre = durumFiltresi;
 
