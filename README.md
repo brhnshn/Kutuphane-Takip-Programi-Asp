@@ -85,7 +85,7 @@ Yerel ortamda çalıştırmak için:
 1. Depoyu klonlayın
 
    ```bash
-   git clone https://github.com/kullaniciadi/repo-adi.git
+   git clone https://github.com/brhnshn/Kutuphane-Takip-Programi-Asp.git
    ```
 2. Visual Studio’da projeyi açın
 3. `appsettings.json` içinde **SQL Server Connection String** bilgisini güncelleyin
