@@ -124,7 +124,7 @@ Yerel ortamda çalıştırmak için:
 
 Geri bildirim, öneri veya iş birliği için:
 
-* **E‑posta:** [contact@burhansahin.com.tr](mailto:contact@burhansahin.com.tr)
+* **E‑posta:** [sahinburhan501@gmail.com](mailto:sahinburhan501@gmail.com)
 * **GitHub:** [https://github.com/brhnshn](https://github.com/brhnshn)
 * **Linkedin:** [https://www.linkedin.com/in/burhan-sahin/](https://www.linkedin.com/in/burhan-sahin/)
 
